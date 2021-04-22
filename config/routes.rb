@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
- root: "photos#index"
+  resources :likes
+  resources :follow_requests
+  resources :comments
+ root "photos#index"
   
 # Routes for the Photos and Users resources:
   resources :photos

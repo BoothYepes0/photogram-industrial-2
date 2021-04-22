@@ -11,12 +11,19 @@ starting = Time.now
 
   p "Creating sample data... please wait."
 
-  12.times do
-      name = Faker::Name.first_name.downcase
-      u = User.create(
-        email: "#{name}@example.com",
-        username: name,
+  usernames = Array.new { Faker::Name.first_name}
+
+  usernames << "alice"
+  usernames << "bob"
+
+  usernames.each do |username| 
+    User.create(
+  #10.times do
+      # name = Faker::Name.first_name.downcase
+      #u = User.create(
+        email: "#{username}@example.com",
         password: "password",
+        username: username.downcase,
         private: [true, false].sample
       )
 #        p u.errors.full_messages

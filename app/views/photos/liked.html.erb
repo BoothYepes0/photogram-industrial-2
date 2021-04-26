@@ -27,11 +27,11 @@
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
   </li>
 </ul>
+  <%= current_user.like_photos.count %>
 
-  <%= current_user.own_photos.count %>
-  
-  <% current_user.own_photos.each do |zebra| %>
-         <%= render "photos/photo", giraffe: zebra %>
+  <% current_user.like_photos.each do |photo| %>
+    <%= render "photos/photo", giraffe: photo %>
   <% end %>
+
 
 
